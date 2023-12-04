@@ -22,6 +22,11 @@ public class Main {
         tree.printfull();  // 56 30 22 11 3 16 40 70 60 65 63 67 95
         tree.size();   // 5
 
+        //UC3 search item in BST
+        tree.search(63);    //true
+        tree.search(2);     //false
+        tree.search(3);     //true
+
 
 
 

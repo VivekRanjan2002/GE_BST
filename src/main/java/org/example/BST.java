@@ -62,6 +62,23 @@ public class BST {
         if(head==null) return 0;
         return 1+Math.max(sizeRec(head.LeftNode),sizeRec(head.RightNode));
     }
+
+
+    /*
+    @desc:search item in BST recursively with if item is smaller than head then
+    search in left subtree and if greater than head then search in Right subtree
+    @return:boolean value if found then true else false
+    */
+    public boolean search(int data){
+        return searchRec(head,data);
+    }
+    private boolean searchRec(Node head,int data){
+        if(head==null)return false;
+        if(head.data==data)return true;
+        if(head.data>data)return searchRec(head.LeftNode,data);
+        return searchRec(head.RightNode,data);
+    }
+
 }
 
 
