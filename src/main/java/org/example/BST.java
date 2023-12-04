@@ -39,17 +39,29 @@ public class BST {
 
     public void printfull(){
         print(head);
+        System.out.println();
+        return;
     }
-    public void print(Node head){
+    private void print(Node head){
         if(head==null) return;
 
-        System.out.println(head.data);
+        System.out.print(head.data+" ");
         print(head.LeftNode);
         print(head.RightNode);
 
     }
 
-
+/*
+@desc: compute size of the Binary search tree by computing height recursively
+@return : int
+ */
+    public int size(){
+        return sizeRec(head);
+    }
+    private int sizeRec(Node head){
+        if(head==null) return 0;
+        return 1+Math.max(sizeRec(head.LeftNode),sizeRec(head.RightNode));
+    }
 }
 
 
